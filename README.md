@@ -1,19 +1,35 @@
-# Zhasus Project
+# Визуализация данных — готовые скрипты
 
-This is the main repository for the Zhasus project.
+В этой папке находятся скрипты для анализа и визуализации CSV-файла
+`2023-05-12_2023-06-12_client_login (1).csv` (разделитель `;`).
 
-## Contents
+Файлы:
+- `data_load.py` — функция `load_data(path)` для чтения и приведения типов.
+- `task1_time_series.py` — агрегация по дате и построение временного ряда показов/кликов.
+- `task2_top_regions.py` — топ регионов по кликам (и показам), сохраняет CSV и график.
+- `task3_age_gender_heatmap.py` — тепловая карта (Возраст × Пол) по показам или кликам.
+- `requirements.txt` — библиотеки, необходимые для запуска.
 
-- Python lab assignments
-- Data analysis scripts
-- CSV data files
+Как запускать (пример в macOS / zsh):
 
-## Setup
+1) Установите зависимости (лучше в виртуальном окружении):
 
 ```bash
+python3 -m venv venv
+source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-## Usage
+2) Примеры запуска:
 
-Run the individual task scripts as needed.
+```bash
+python3 task1_time_series.py "2023-05-12_2023-06-12_client_login (1).csv"
+python3 task2_top_regions.py "2023-05-12_2023-06-12_client_login (1).csv"
+python3 task3_age_gender_heatmap.py "2023-05-12_2023-06-12_client_login (1).csv"
+```
+
+Результаты будут сохраняться в папке `outputs/` (совокупные CSV и PNG-файлы).
+
+Короткие примечания и советы:
+- Если файл очень большой, используйте параметр `chunksize` в pandas.read_csv и агрегируйте по частям.
+- Если нужно строить графики для других колонок, откройте соответствующий скрипт и замените имя колонки.
