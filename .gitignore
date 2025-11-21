@@ -29,6 +29,9 @@ venv/
 ENV/
 env/
 
+# Generated outputs (CSV, PNG, etc)
+outputs/
+
 # IDEs
 .vscode/
 .idea/
@@ -39,3 +42,4 @@ env/
 # OS
 .DS_Store
 Thumbs.db
+
